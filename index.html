@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop And Wait ARQ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">Stop And Wait ARQ</div>
+
+      <div class="timer-container">
+        <div class="timer-label">Sender Timer</div>
+        <div class="timer-display" id="timerDisplay">10.0s</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+
+      <!-- Status log -->
+      <div class="log-container">
+        <div class="log-title">Event Log</div>
+        <div class="log-body" id="logBody"></div>
+      </div>
+
+      <!-- Sequence number display -->
+      <div class="seq-display">
+        <div class="seq-box" id="senderSeq">
+          <div class="seq-label">Sender expects ACK</div>
+          <div class="seq-num" id="senderSeqNum">0</div>
+        </div>
+        <div class="seq-box" id="receiverSeq">
+          <div class="seq-label">Receiver expects PKT</div>
+          <div class="seq-num" id="receiverSeqNum">0</div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="lane-label sender-label">SENDER</div>
+        <div class="channel-area" id="channelArea">
+          <!-- Flying packets rendered here -->
+        </div>
+        <div class="lane-label receiver-label">RECEIVER</div>
+
+        <div class="sender array-container"></div>
+        <div class="receiver array-container"></div>
+      </div>
+
+      <div class="buttons-parent">
+        <div class="buttons">
+          <button class="succ-trans" type="button">
+            Successful Transmission
+          </button>
+          <button class="ack-lost" type="button">ACK Lost</button>
+          <button class="data-lost" type="button">Data Lost</button>
+          <button class="reset" type="button">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

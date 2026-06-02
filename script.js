@@ -1,8 +1,3 @@
-// ============================================================
-//  Stop-and-Wait ARQ  — full simulation
-//  Scenarios: Successful | ACK Lost | Data Lost
-// ============================================================
-
 // ── Timer ──────────────────────────────────────────────────
 class ARQTimer {
   constructor(durationInSeconds, displayId, progressBarId, onTimeoutCallback) {
@@ -67,7 +62,7 @@ const btnReset = document.querySelector(".reset");
 
 // ── State ──────────────────────────────────────────────────
 const TOTAL_PACKETS = 5;
-const min_duration = 1500;
+const min_duration = 2100;
 let senderSeq = 0; // which packet number sender is waiting ACK for (0-based, mod 2)
 let receiverSeq = 0; // which packet number receiver expects next
 let currentPkt = 0; // index into the packets array (0..TOTAL_PACKETS-1)
